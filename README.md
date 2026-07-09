@@ -41,13 +41,27 @@ Five classification models are trained and compared, each tuned with `GridSearch
 - **Precision**
 - **Recall**
 - **F1-Score**
+- **AUC**
 - **Confusion Matrix**
 
 ## 🛠️ Technologies Used
 Python 3.x with Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, and XGBoost.
 
 ## 📈 Results Summary
-Results are compared across all 5 models using a summary table and bar chart, highlighting the best-performing model based on F1-score for the canceled class.
+
+Performance on the test set (class 1 = canceled bookings):
+
+| Model | Accuracy | Precision | Recall | F1-Score | AUC |
+|-------|----------|-----------|--------|----------|-----|
+| Decision Tree | 83.44% | 74.65% | 83.79% | 78.96% | 91.60% |
+| Random Forest | 86.22% | 80.15% | 83.52% | 81.80% | 93.95% |
+| **XGBoost** | **87.25%** | 81.08% | 85.58% | **83.27%** | **94.88%** |
+| Logistic Regression | 78.36% | 68.10% | 78.31% | 72.85% | 87.84% |
+| Gradient Boosting | 86.26% | 85.09% | 76.32% | 80.47% | 93.68% |
+
+**🏆 Best model: XGBoost**, with the highest F1-score (83.27%) and AUC (94.88%), offering the best balance between correctly identifying cancellations (recall) and avoiding false alarms (precision).
+
+Gradient Boosting stands out for the highest precision (85.09%), making it a strong candidate if minimizing false positives matters most, while XGBoost remains the most balanced choice overall.
 
 ## 🚀 How to Run
 ```bash
